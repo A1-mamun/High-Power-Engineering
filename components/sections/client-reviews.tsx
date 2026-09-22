@@ -6,6 +6,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import { ChevronLeft, ChevronRight, Quote, Star } from "lucide-react";
 
 import { clientReviews } from "@/lib/data";
+import SectionTitle from "../shared/SectionTitle";
 
 function StarRating({ rating }: { rating: number }) {
   return (
@@ -55,13 +56,9 @@ export function ClientReviews() {
   return (
     <section className="bg-gradient-to-b from-slate-50 to-white py-16 md:py-20">
       <div className="container">
-        <div className="mb-10 text-center">
-          <span className="text-sm font-bold uppercase tracking-[0.2em] text-primary">
-            Testimonials
-          </span>
-          <h2 className="section-title mx-auto mt-2 inline-block">
-            What Our Clients Say
-          </h2>
+        <div className="mb-10 flex flex-col items-center text-center">
+          <SectionTitle title="What Our Clients Say" subtitle="Testimonials" />
+
           <p className="mx-auto mt-4 max-w-2xl text-slate-600">
             Real feedback from industry leaders who trust High Power BD with
             their most critical power infrastructure projects.

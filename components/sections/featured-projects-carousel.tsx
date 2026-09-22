@@ -3,7 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "@/components/icons";
 
 import { useEmblaSlider } from "@/lib/hooks/use-embla-slider";
 
@@ -53,18 +53,18 @@ export function FeaturedProjectsCarousel({
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-secondary/30 mix-blend-overlay" />
 
                 {/* Category badge */}
-                <span className="absolute left-4 top-4 z-10 rounded-full bg-primary px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-primary-foreground shadow-md">
+                <span className="absolute left-3 top-3 z-10 rounded-full bg-primary px-2.5 py-0.5 text-[9px] font-bold uppercase tracking-wider text-primary-foreground shadow-md sm:left-4 sm:top-4 sm:px-3 sm:py-1 sm:text-[10px]">
                   {project.category}
                 </span>
 
                 {/* Title overlay */}
-                <div className="absolute inset-x-0 bottom-0 z-10 p-5">
-                  <h3 className="text-base font-extrabold leading-tight text-white drop-shadow-md md:text-lg">
+                <div className="absolute inset-x-0 bottom-0 z-10 p-4 sm:p-5">
+                  <h3 className="text-sm font-extrabold leading-tight text-white drop-shadow-md sm:text-base md:text-lg">
                     {project.title}
                   </h3>
-                  <div className="mt-2 flex items-center gap-1 text-xs font-semibold uppercase tracking-wider text-primary-foreground/80">
+                  <div className="mt-1.5 flex items-center gap-1 text-[10px] font-semibold uppercase tracking-wider text-primary-foreground/80 sm:mt-2 sm:text-xs">
                     <span>View project</span>
-                    <ChevronRight className="h-3.5 w-3.5" />
+                    <ChevronRight className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
                   </div>
                 </div>
               </div>
@@ -78,17 +78,17 @@ export function FeaturedProjectsCarousel({
         type="button"
         onClick={scrollPrev}
         aria-label="Previous project"
-        className="absolute left-3 top-1/2 z-20 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-white/90 text-slate-700 shadow-md transition-all hover:bg-primary hover:text-primary-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+        className="absolute left-2 top-1/2 z-20 -translate-y-1/2 flex h-8 w-8 items-center justify-center rounded-full bg-white/90 text-slate-700 shadow-md transition-all hover:bg-primary hover:text-primary-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary sm:left-3 sm:h-10 sm:w-10"
       >
-        <ChevronLeft className="h-5 w-5" />
+        <ChevronLeft className="h-4 w-4 sm:h-5 sm:w-5" />
       </button>
       <button
         type="button"
         onClick={scrollNext}
         aria-label="Next project"
-        className="absolute right-3 top-1/2 z-20 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-white/90 text-slate-700 shadow-md transition-all hover:bg-primary hover:text-primary-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+        className="absolute right-2 top-1/2 z-20 -translate-y-1/2 flex h-8 w-8 items-center justify-center rounded-full bg-white/90 text-slate-700 shadow-md transition-all hover:bg-primary hover:text-primary-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary sm:right-3 sm:h-10 sm:w-10"
       >
-        <ChevronRight className="h-5 w-5" />
+        <ChevronRight className="h-4 w-4 sm:h-5 sm:w-5" />
       </button>
     </div>
   );

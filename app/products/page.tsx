@@ -1,8 +1,18 @@
-import { ArrowRight } from "lucide-react";
+import type { Metadata } from "next";
+import { ArrowRight } from "@/components/icons";
 
 import { products } from "@/lib/data";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Our Products",
+  description:
+    "Industrial-grade electrical equipment: diesel & gas generators, power transformers, panel boards, substations, synchronizing panels, and full electrical accessory lines.",
+  alternates: {
+    canonical: "/products",
+  },
+};
 
 export default function ProductsPage() {
   return (

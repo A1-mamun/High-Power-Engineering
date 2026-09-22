@@ -1,7 +1,17 @@
-import { Award, Target, Users, Globe2 } from "lucide-react";
+import type { Metadata } from "next";
+import { Award, Target, Users, Globe2 } from "@/components/icons";
 
 import { company } from "@/lib/data";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+
+export const metadata: Metadata = {
+  title: "About Us",
+  description:
+    "Learn about High Power Engineering Limited — 200+ engineers delivering world-class power generation, electrical infrastructure, and turnkey industrial solutions since 2010.",
+  alternates: {
+    canonical: "/about",
+  },
+};
 
 export default function AboutPage() {
   return (

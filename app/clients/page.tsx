@@ -1,5 +1,15 @@
+import type { Metadata } from "next";
 import { ClientLogos } from "@/components/sections/client-logos";
 import { ClientReviews } from "@/components/sections/client-reviews";
+
+export const metadata: Metadata = {
+  title: "Our Clients",
+  description:
+    "Trusted by leading companies across multiple industries — from power plants to hospitals and RMG factories — for reliable, world-class power solutions.",
+  alternates: {
+    canonical: "/clients",
+  },
+};
 
 export default function ClientsPage() {
   return (

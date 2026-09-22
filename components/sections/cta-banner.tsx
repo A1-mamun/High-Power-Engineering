@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Phone } from "lucide-react";
+import { ArrowRight, Phone } from "@/components/icons";
 
 import { company } from "@/lib/data";
 import { Button } from "@/components/ui/button";

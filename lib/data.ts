@@ -18,8 +18,8 @@ import {
   Twitter,
   Youtube,
   Linkedin,
-  type LucideIcon,
-} from "lucide-react";
+  type IconType as LucideIcon,
+} from "@/components/icons";
 
 export const company = {
   name: "High Power Engineering Limited",

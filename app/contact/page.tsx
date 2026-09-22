@@ -1,9 +1,19 @@
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import type { Metadata } from "next";
+import { Mail, Phone, MapPin, Send } from "@/components/icons";
 
 import { company, contactEmails } from "@/lib/data";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+
+export const metadata: Metadata = {
+  title: "Contact Us",
+  description:
+    "Get in touch with our engineering team. We typically respond within one business day. Offices in Dhaka and Chattogram, Bangladesh.",
+  alternates: {
+    canonical: "/contact",
+  },
+};
 
 export default function ContactPage() {
   return (

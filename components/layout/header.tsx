@@ -1,7 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Phone, Mail, MapPin } from "lucide-react";
+import type { IconType } from "react-icons";
 
+import { Phone, Mail, MapPin } from "@/components/icons";
 import { company } from "@/lib/data";
 import { MobileNav } from "./mobile-nav";
 import { TopBar } from "./top-bar";
@@ -13,7 +14,7 @@ export function Header() {
 
       {/* Logo / contact strip */}
       <div className="border-b bg-white">
-        <div className="container flex h-24 items-center justify-between gap-6">
+        <div className="container flex h-16 md:h-20 lg:h-24 items-center justify-between gap-6">
           <Link href="/" className="flex items-center gap-3">
             <div className="relative h-14 w-14 overflow-hidden rounded-md">
               <Image
@@ -68,7 +69,7 @@ function ContactItem({
   value,
   href,
 }: {
-  icon: React.ComponentType<{ className?: string }>;
+  icon: IconType;
   label: string;
   value: string;
   href?: string;

@@ -1,8 +1,18 @@
+import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight } from "@/components/icons";
 
 import { services, serviceTiles } from "@/lib/data";
 import { Button } from "@/components/ui/button";
+
+export const metadata: Metadata = {
+  title: "Our Services",
+  description:
+    "Comprehensive electrical engineering and support services — from supply and installation to lifetime maintenance, AMCs, and corporate service contracts.",
+  alternates: {
+    canonical: "/services",
+  },
+};
 
 export default function ServicesPage() {
   return (

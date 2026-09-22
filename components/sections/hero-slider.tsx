@@ -2,12 +2,17 @@
 
 import * as React from "react";
 import Image from "next/image";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "@/components/icons";
 
 import { heroSlides } from "@/lib/data";
 import { useEmblaSlider } from "@/lib/hooks/use-embla-slider";
 
-const VISIBLE = 3;
+// Responsive slide count: 1 on mobile (<sm), 2 on tablet (sm–<lg), 3 on desktop (lg+)
+const getVisible = (width: number) => {
+  if (width < 640) return 1;
+  if (width < 1024) return 2;
+  return 3;
+};
 
 export function HeroSlider() {
   const {
@@ -18,17 +23,17 @@ export function HeroSlider() {
     scrollNext,
     scrollTo,
     slideStyle,
-  } = useEmblaSlider({ visible: VISIBLE, autoplayDelay: 4000 });
+  } = useEmblaSlider({ visible: getVisible, autoplayDelay: 4000 });
 
   return (
-    <section className="relative overflow-hidden text-white container mx-auto">
+    <section className="relative overflow-hidden text-white md:container md:mx-auto">
       <div className="embla" ref={emblaRef} style={slideStyle}>
         <div className="embla__container">
           {heroSlides.map((slide) => {
             return (
               <div
                 key={slide.title}
-                className={`embla__slide relative aspect-square w-full px-2 md:px-3`}
+                className={`embla__slide relative aspect-[5/3] sm:aspect-[4/3] md:aspect-square w-full px-1.5 sm:px-2 md:px-3`}
               >
                 {/* Background image */}
                 <Image
@@ -65,21 +70,21 @@ export function HeroSlider() {
         type="button"
         onClick={scrollPrev}
         aria-label="Previous slide"
-        className="absolute left-4 top-1/2 z-10 -translate-y-1/2 flex h-12 w-12 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur transition-all hover:bg-primary hover:text-primary-foreground md:left-8"
+        className="absolute left-2 top-1/2 z-10 -translate-y-1/2 flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur transition-all hover:bg-primary hover:text-primary-foreground sm:left-4 sm:h-12 sm:w-12 md:left-8"
       >
-        <ChevronLeft className="h-6 w-6" />
+        <ChevronLeft className="h-5 w-5 sm:h-6 sm:w-6" />
       </button>
       <button
         type="button"
         onClick={scrollNext}
         aria-label="Next slide"
-        className="absolute right-4 top-1/2 z-10 -translate-y-1/2 flex h-12 w-12 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur transition-all hover:bg-primary hover:text-primary-foreground md:right-8"
+        className="absolute right-2 top-1/2 z-10 -translate-y-1/2 flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur transition-all hover:bg-primary hover:text-primary-foreground sm:right-4 sm:h-12 sm:w-12 md:right-8"
       >
-        <ChevronRight className="h-6 w-6" />
+        <ChevronRight className="h-5 w-5 sm:h-6 sm:w-6" />
       </button>
 
       {/* Dots */}
-      <div className="absolute bottom-6 left-1/2 z-10 flex -translate-x-1/2 gap-2">
+      <div className="absolute bottom-3 left-1/2 z-10 flex -translate-x-1/2 gap-2 sm:bottom-6">
         {scrollSnaps.map((_, i) => (
           <button
             key={i}

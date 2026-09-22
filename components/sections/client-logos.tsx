@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "@/components/icons";
 
 import { useEmblaSlider } from "@/lib/hooks/use-embla-slider";
 import SectionTitle from "../shared/SectionTitle";
@@ -50,7 +50,19 @@ const labels = [
   "Astra",
 ];
 
-const VISIBLE = 5;
+// Responsive slide count for the client logo carousel:
+//  - Mobile  (<sm: 640px)         → 2 logos
+//  - Small   (sm:  640–<md: 768)  → 3 logos
+//  - Tablet  (md:  768–<lg: 1024) → 4 logos
+//  - Desktop (lg:  1024–<xl: 1280)→ 5 logos
+//  - Large   (xl:  ≥1280)         → 6 logos
+const getVisible = (width: number) => {
+  if (width < 640) return 2;
+  if (width < 768) return 3;
+  if (width < 1024) return 4;
+  if (width < 1280) return 5;
+  return 6;
+};
 
 export function ClientLogos() {
   const {
@@ -61,7 +73,7 @@ export function ClientLogos() {
     scrollNext,
     scrollTo,
     slideStyle,
-  } = useEmblaSlider({ visible: VISIBLE, autoplayDelay: 2500 });
+  } = useEmblaSlider({ visible: getVisible, autoplayDelay: 2500 });
 
   return (
     <section className="container  py-16">
@@ -85,15 +97,15 @@ export function ClientLogos() {
             {labels.map((label, idx) => {
               const color = colors[idx % colors.length];
               return (
-                <div key={label} className="embla__slide px-3">
-                  <div className="group flex aspect-[3/2] items-center justify-center rounded-md border bg-slate-50 p-4 transition-all hover:border-primary hover:bg-white hover:shadow-md">
-                    <div className="flex flex-col items-center gap-2">
+                <div key={label} className="embla__slide px-1.5 sm:px-2 md:px-3">
+                  <div className="group flex aspect-[3/2] items-center justify-center rounded-md border bg-slate-50 p-3 transition-all hover:border-primary hover:bg-white hover:shadow-md sm:p-4">
+                    <div className="flex flex-col items-center gap-1.5 sm:gap-2">
                       <div
-                        className={`flex h-10 w-10 items-center justify-center rounded-md bg-gradient-to-br ${color} text-sm font-extrabold text-white shadow-sm transition-transform group-hover:scale-110`}
+                        className={`flex h-9 w-9 items-center justify-center rounded-md bg-gradient-to-br ${color} text-sm font-extrabold text-white shadow-sm transition-transform group-hover:scale-110 sm:h-10 sm:w-10`}
                       >
                         {label.charAt(0)}
                       </div>
-                      <span className="text-[10px] font-bold uppercase tracking-wider text-slate-600 text-center leading-tight">
+                      <span className="text-[9px] font-bold uppercase tracking-wider text-slate-600 text-center leading-tight sm:text-[10px]">
                         {label}
                       </span>
                     </div>
@@ -109,22 +121,22 @@ export function ClientLogos() {
           type="button"
           onClick={scrollPrev}
           aria-label="Previous slide"
-          className="absolute left-2 top-1/2 z-10 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white text-slate-700 shadow-md transition-all hover:bg-primary hover:text-primary-foreground md:flex md:left-6"
+          className="absolute left-1 top-1/2 z-10 hidden h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-white text-slate-700 shadow-md transition-all hover:bg-primary hover:text-primary-foreground sm:flex sm:left-2 sm:h-10 sm:w-10 md:left-6 md:h-11 md:w-11"
         >
-          <ChevronLeft className="h-5 w-5" />
+          <ChevronLeft className="h-4 w-4 sm:h-5 sm:w-5" />
         </button>
         <button
           type="button"
           onClick={scrollNext}
           aria-label="Next slide"
-          className="absolute right-2 top-1/2 z-10 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white text-slate-700 shadow-md transition-all hover:bg-primary hover:text-primary-foreground md:flex md:right-6"
+          className="absolute right-1 top-1/2 z-10 hidden h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-white text-slate-700 shadow-md transition-all hover:bg-primary hover:text-primary-foreground sm:flex sm:right-2 sm:h-10 sm:w-10 md:right-6 md:h-11 md:w-11"
         >
-          <ChevronRight className="h-5 w-5" />
+          <ChevronRight className="h-4 w-4 sm:h-5 sm:w-5" />
         </button>
       </div>
 
       {/* Dots */}
-      <div className="mt-8 flex justify-center gap-2">
+      <div className="mt-6 flex justify-center gap-2 sm:mt-8">
         {scrollSnaps.map((_, i) => (
           <button
             key={i}

@@ -3,7 +3,8 @@
 import * as React from "react";
 import Autoplay from "embla-carousel-autoplay";
 import useEmblaCarousel from "embla-carousel-react";
-import { ChevronLeft, ChevronRight, Quote, Star } from "lucide-react";
+import { ChevronLeft, ChevronRight, Star } from "@/components/icons";
+import { FaQuoteLeft as Quote } from "react-icons/fa";
 
 import { clientReviews } from "@/lib/data";
 import SectionTitle from "../shared/SectionTitle";

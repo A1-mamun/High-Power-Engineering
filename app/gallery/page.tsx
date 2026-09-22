@@ -1,7 +1,17 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 
 import { recentProjects } from "@/lib/data";
 import { FeaturedProjectVideo } from "@/components/sections/featured-project-video";
+
+export const metadata: Metadata = {
+  title: "Project Gallery",
+  description:
+    "Explore our portfolio of completed power generation, substation, and electrical infrastructure projects across South Asia.",
+  alternates: {
+    canonical: "/gallery",
+  },
+};
 
 export default function GalleryPage() {
   return (

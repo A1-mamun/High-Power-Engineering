@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { Play } from "lucide-react";
+import { Play } from "@/components/icons";
 
 import {
   Dialog,
@@ -52,29 +52,29 @@ export function FeaturedProjectVideo({
 
         {/* Soft brand color glow blobs */}
         <div className="pointer-events-none absolute inset-0 opacity-40">
-          <div className="absolute -left-10 top-0 h-56 w-56 rounded-full bg-primary/60 blur-3xl" />
-          <div className="absolute -right-10 bottom-0 h-56 w-56 rounded-full bg-secondary/80 blur-3xl" />
+          <div className="absolute -left-10 top-0 h-40 w-40 rounded-full bg-primary/60 blur-3xl sm:h-56 sm:w-56" />
+          <div className="absolute -right-10 bottom-0 h-40 w-40 rounded-full bg-secondary/80 blur-3xl sm:h-56 sm:w-56" />
         </div>
 
         {/* Centered play button + caption */}
         <div className="relative z-10 flex aspect-video items-center justify-center">
-          <div className="flex flex-col items-center gap-4 text-center">
+          <div className="flex flex-col items-center gap-3 px-4 text-center sm:gap-4">
             <DialogTrigger asChild>
               <button
                 type="button"
                 aria-label={`Play featured project video: ${title}`}
-                className="group/btn relative flex h-20 w-20 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-[0_10px_30px_rgba(2,143,217,0.6)] ring-4 ring-white/15 transition-all duration-300 hover:scale-110 hover:shadow-[0_15px_40px_rgba(2,143,217,0.85)] focus-visible:outline-none focus-visible:ring-white/40"
+                className="group/btn relative flex h-14 w-14 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-[0_10px_30px_rgba(2,143,217,0.6)] ring-4 ring-white/15 transition-all duration-300 hover:scale-110 hover:shadow-[0_15px_40px_rgba(2,143,217,0.85)] focus-visible:outline-none focus-visible:ring-white/40 sm:h-20 sm:w-20"
               >
                 {/* pulsing ring */}
                 <span className="absolute inset-0 -z-10 animate-ping rounded-full bg-primary/40 opacity-60" />
-                <Play className="ml-1 h-9 w-9 fill-current" />
+                <Play className="ml-0.5 h-6 w-6 fill-current sm:ml-1 sm:h-9 sm:w-9" />
               </button>
             </DialogTrigger>
-            <div className="space-y-2 px-4">
-              <span className="inline-block rounded-full bg-white/15 px-3 py-1 text-xs font-bold uppercase tracking-wider text-white backdrop-blur">
+            <div className="space-y-1.5 sm:space-y-2">
+              <span className="inline-block rounded-full bg-white/15 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-white backdrop-blur sm:px-3 sm:py-1 sm:text-xs">
                 {category}
               </span>
-              <h3 className="text-2xl font-extrabold text-white drop-shadow-md md:text-3xl">
+              <h3 className="text-base font-extrabold leading-tight text-white drop-shadow-md sm:text-2xl md:text-3xl">
                 {title}
               </h3>
             </div>

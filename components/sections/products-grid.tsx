@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight } from "@/components/icons";
 
 import { products } from "@/lib/data";
 import { Button } from "@/components/ui/button";
@@ -11,11 +11,11 @@ export function ProductsGrid() {
       <div className="">
         <div className="grid gap-6 lg:grid-cols-4">
           {/* Products grid - takes 3 cols */}
-          <div className=" bg-slate-200 p-8 lg:col-span-3">
+          <div className=" bg-slate-200 p-4 md:p-6 lg:p-8 lg:col-span-3">
             <div className="mb-5 flex items-center justify-center">
               <SectionTitle title="Our Products" subtitle="What we Deliver" />
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4">
               {products.map((product) => {
                 const Icon = product.icon;
                 return (

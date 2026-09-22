@@ -3,6 +3,7 @@ import { ArrowRight } from "lucide-react";
 
 import { products } from "@/lib/data";
 import { Button } from "@/components/ui/button";
+import SectionTitle from "../shared/SectionTitle";
 
 export function ProductsGrid() {
   return (
@@ -11,9 +12,9 @@ export function ProductsGrid() {
         <div className="grid gap-6 lg:grid-cols-4">
           {/* Products grid - takes 3 cols */}
           <div className=" bg-slate-200 p-8 lg:col-span-3">
-            <h2 className="text-4xl font-semibold mb-2 text-center">
-              Our Products
-            </h2>
+            <div className="mb-5 flex items-center justify-center">
+              <SectionTitle title="Our Products" subtitle="What we Deliver" />
+            </div>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
               {products.map((product) => {
                 const Icon = product.icon;
@@ -75,7 +76,11 @@ export function ProductsGrid() {
                   power projects for industrial and commercial clients.
                 </p>
               </div>
-              <Button asChild variant="default" className="w-full bg-secondary hover:bg-secondary/90">
+              <Button
+                asChild
+                variant="default"
+                className="w-full bg-secondary hover:bg-secondary/90"
+              >
                 <Link href="/contact">
                   Request a Quote
                   <ArrowRight className="h-4 w-4" />

@@ -3,18 +3,14 @@ import { ArrowRight } from "lucide-react";
 
 import { services } from "@/lib/data";
 import { Button } from "@/components/ui/button";
+import SectionTitle from "../shared/SectionTitle";
 
 export function ServicesCards() {
   return (
     <section className="bg-white py-16">
       <div className="container">
         <div className="mb-10 flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
-          <div>
-            <span className="text-sm font-bold uppercase tracking-[0.2em] text-primary">
-              What we do
-            </span>
-            <h2 className="section-title mt-2">Our Services</h2>
-          </div>
+          <SectionTitle title="Our Services" subtitle="What we do" />
           <Button asChild variant="outline">
             <Link href="/services">
               All Services

@@ -1,6 +1,7 @@
-import { Play, Zap } from "lucide-react";
+import Image from "next/image";
 
 import { recentProjects } from "@/lib/data";
+import { FeaturedProjectVideo } from "@/components/sections/featured-project-video";
 
 export default function GalleryPage() {
   return (
@@ -20,26 +21,36 @@ export default function GalleryPage() {
           {recentProjects.map((p, idx) => (
             <div
               key={p.title}
-              className="group overflow-hidden rounded-lg border bg-white shadow-sm transition-all hover:shadow-lg"
+              className="group overflow-hidden rounded-lg border bg-white shadow-sm transition-all hover:shadow-[0_25px_60px_-15px_rgba(2,143,217,0.45)]"
             >
-              <div className="relative flex aspect-video items-center justify-center bg-gradient-to-br from-secondary via-primary to-slate-900">
-                <Zap className="h-16 w-16 text-white/50" strokeWidth={1.5} />
-                {idx === 0 && (
-                  <button
-                    type="button"
-                    aria-label="Play video"
-                    className="absolute flex h-16 w-16 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-lg transition-transform group-hover:scale-110"
-                  >
-                    <Play className="ml-1 h-7 w-7 fill-current" />
-                  </button>
-                )}
-              </div>
-              <div className="p-4">
-                <span className="text-xs font-bold uppercase tracking-wider text-primary">
-                  {p.category}
-                </span>
-                <h3 className="mt-1 text-base font-bold">{p.title}</h3>
-              </div>
+              {idx === 0 ? (
+                <FeaturedProjectVideo
+                  videoId="VREiOSKyLnA"
+                  category={p.category}
+                  title={p.title}
+                />
+              ) : (
+                <>
+                  <div className="relative aspect-video w-full overflow-hidden">
+                    <Image
+                      src={p.image}
+                      alt={p.title}
+                      fill
+                      sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-secondary/80 via-secondary/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                  </div>
+                  <div className="p-4">
+                    <span className="text-xs font-bold uppercase tracking-wider text-primary">
+                      {p.category}
+                    </span>
+                    <h3 className="mt-1 text-base font-bold text-secondary">
+                      {p.title}
+                    </h3>
+                  </div>
+                </>
+              )}
             </div>
           ))}
         </div>

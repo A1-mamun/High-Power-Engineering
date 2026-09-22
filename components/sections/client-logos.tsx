@@ -4,6 +4,7 @@ import * as React from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 import { useEmblaSlider } from "@/lib/hooks/use-embla-slider";
+import SectionTitle from "../shared/SectionTitle";
 
 const colors = [
   "from-primary to-secondary",
@@ -65,13 +66,11 @@ export function ClientLogos() {
   return (
     <section className="container  py-16">
       <div className="bg-white">
-        <div className="mb-10 text-center">
-          <span className="text-sm font-bold uppercase tracking-[0.2em] text-primary">
-            Trusted by industry leaders
-          </span>
-          <h2 className="section-title mx-auto mt-2 inline-block">
-            Our Valuable Clients
-          </h2>
+        <div className="mb-10 flex flex-col items-center text-center">
+          <SectionTitle
+            title="Our Valuable Clients"
+            subtitle="Trusted by industry leaders"
+          />
           <p className="mx-auto mt-4 max-w-2xl text-slate-600">
             We&apos;re proud to partner with leading companies across multiple
             industries to deliver reliable power and electrical solutions.

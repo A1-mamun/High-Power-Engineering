@@ -22,14 +22,15 @@ import {
 } from "lucide-react";
 
 export const company = {
-  name: "High Power Electricity",
-  tagline: "World-Class Materials. First-Class Service.",
+  name: "High Power Engineering Limited",
+  tagline: "Your Pinnacle in Electrical and Power Solutions!",
   description:
     "Leading provider of power generation, electrical infrastructure, and industrial solutions across South Asia. We deliver reliable, efficient, and sustainable energy systems for businesses of every size.",
-  email: "info@highpower-electricity.com",
-  phone: "+880 1700-000000",
-  address: "House 12, Road 7, Dhanmondi, Dhaka 1205, Bangladesh",
-  shortAddress: "Dhanmondi, Dhaka, Bangladesh",
+  email: "contact@highpowerbd.com",
+  phone: "+8801842 11 39 39",
+  address:
+    "Rokeya Nibash (Ground Floor), 91 Shohid Jan-E-Alam Shorok, Muradpur",
+  shortAddress: "Muradpur, Chattogram, Bangladesh",
   founded: 2010,
 };
 
@@ -41,8 +42,9 @@ export const socialLinks = [
 ];
 
 export const contactEmails = [
-  "sales@highpower-electricity.com",
-  "support@highpower-electricity.com",
+  "contact@highpowerbd.com",
+  "sales@highpowerbd.com",
+  "support@highpowerbd.com",
 ];
 
 export type NavItem = {
@@ -236,11 +238,31 @@ export const heroSlides: Slide[] = [
 ];
 
 export const recentProjects = [
-  { title: "335 MW Combined Cycle Power Plant", category: "Power Plant" },
-  { title: "Industrial Substation — Gazipur", category: "Substation" },
-  { title: "Generator Bank — Chittagong Port", category: "Generators" },
-  { title: "Hospital Backup Power — Square Hospital", category: "Backup" },
-  { title: "RMG Factory Distribution Upgrade", category: "Switchgear" },
+  {
+    title: "335 MW Combined Cycle Power Plant",
+    category: "Power Plant",
+    image: "/images/hpe-0.jpg",
+  },
+  {
+    title: "Industrial Substation — Gazipur",
+    category: "Substation",
+    image: "/images/hpe-1.jpg",
+  },
+  {
+    title: "Generator Bank — Chittagong Port",
+    category: "Generators",
+    image: "/images/hpe-2.jpg",
+  },
+  {
+    title: "Hospital Backup Power — Square Hospital",
+    category: "Backup",
+    image: "/images/hpe-3.jpg",
+  },
+  {
+    title: "RMG Factory Distribution Upgrade",
+    category: "Switchgear",
+    image: "/images/hpe-4.jpg",
+  },
 ];
 
 export const quickContact = {

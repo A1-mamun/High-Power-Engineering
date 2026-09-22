@@ -20,16 +20,16 @@ export function ServiceTiles() {
                 <div className="absolute inset-0 -z-10 bg-gradient-to-br from-primary to-secondary opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
                 {/* Icon circle */}
-                <div className="flex h-14 w-14 items-center justify-center rounded-full bg-primary/10 text-primary transition-all duration-300 group-hover:rotate-6 group-hover:bg-white group-hover:text-primary group-hover:shadow-lg">
+                <div className="flex h-14 w-14 items-center justify-center rounded-full bg-primary/10 text-primary transition-all duration-300 group-hover:rotate-6 group-hover:bg-white group-hover:text-secondary group-hover:shadow-lg">
                   <Icon className="h-7 w-7" strokeWidth={2} />
                 </div>
 
                 {/* Title + subtitle */}
                 <div className="flex flex-col leading-tight">
-                  <span className="text-sm font-bold uppercase tracking-wider text-secondary transition-colors duration-300 group-hover:text-white">
+                  <span className="text-sm font-bold uppercase tracking-wider text-secondary transition-colors duration-300 group-hover:text-primary">
                     {tile.title}
                   </span>
-                  <span className="mt-1 flex items-center justify-center gap-1 text-[11px] font-medium text-muted-foreground transition-colors duration-300 group-hover:text-white/90">
+                  <span className="mt-1 flex items-center justify-center gap-1 text-xs font-medium text-primary transition-colors duration-300 group-hover:text-secondary/90">
                     Learn more
                     <ArrowRight className="h-3 w-3 transition-transform duration-300 group-hover:translate-x-1" />
                   </span>

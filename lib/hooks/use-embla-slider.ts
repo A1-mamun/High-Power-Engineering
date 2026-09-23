@@ -40,20 +40,23 @@ export function useEmblaSlider({ visible, autoplayDelay, options = {} }: Options
     autoplayDelay == null ? null : Autoplay({ delay: autoplayDelay, stopOnInteraction: false }),
   );
 
-  // Track viewport width when `visible` is a function
-  const [width, setWidth] = React.useState<number>(() =>
-    typeof window === "undefined" ? 1280 : window.innerWidth,
-  );
+  // Track viewport width when `visible` is a function. We start with a stable
+  // SSR-safe default so the server-rendered HTML matches the first client
+  // render — preventing hydration mismatches. `useLayoutEffect` then snaps to
+  // the real width *before* the browser paints, so embla mounts on the right
+  // breakpoint and we never flash a desktop layout on mobile.
+  const isResponsive = typeof visible === "function";
+  const [width, setWidth] = React.useState<number>(1280);
 
-  React.useEffect(() => {
-    if (typeof visible !== "function") return;
-    const onResize = () => setWidth(window.innerWidth);
-    onResize();
-    window.addEventListener("resize", onResize, { passive: true });
-    return () => window.removeEventListener("resize", onResize);
-  }, [visible]);
+  React.useLayoutEffect(() => {
+    if (!isResponsive) return;
+    const apply = () => setWidth(window.innerWidth);
+    apply();
+    window.addEventListener("resize", apply, { passive: true });
+    return () => window.removeEventListener("resize", apply);
+  }, [isResponsive]);
 
-  const visibleCount = resolveVisible(visible, width);
+  const visibleCount = isResponsive ? resolveVisible(visible, width) : visible;
 
   const [emblaRef, emblaApi] = useEmblaCarousel(
     {
@@ -67,10 +70,15 @@ export function useEmblaSlider({ visible, autoplayDelay, options = {} }: Options
   );
 
   // Re-initialise whenever visibleCount changes so the slide-size CSS
-  // variable updates and embla re-aligns correctly.
-  React.useEffect(() => {
+  // variable updates and embla re-aligns correctly. Use a layout effect so
+  // the re-init happens before paint, eliminating the "wrong count flash".
+  React.useLayoutEffect(() => {
     if (!emblaApi) return;
     emblaApi.reInit();
+    // After a re-init, jump back to the first slide so the carousel always
+    // opens from a consistent position — particularly important when the
+    // visible count changes between breakpoints.
+    emblaApi.scrollTo(0, true);
   }, [emblaApi, visibleCount]);
 
   const [selected, setSelected] = React.useState(0);
@@ -81,9 +89,11 @@ export function useEmblaSlider({ visible, autoplayDelay, options = {} }: Options
     setScrollSnaps(emblaApi.scrollSnapList());
     const onSelect = () => setSelected(emblaApi.selectedScrollSnap());
     emblaApi.on("select", onSelect);
+    emblaApi.on("reInit", onSelect);
     onSelect();
     return () => {
       emblaApi.off("select", onSelect);
+      emblaApi.off("reInit", onSelect);
     };
   }, [emblaApi]);
 

@@ -45,7 +45,8 @@ export function TopBar() {
           {" "}
           <div className="flex items-center gap-6 pr-4 text-white">
             <a
-              href="#"
+              href="https://www.facebook.com/share/1Q8RUeaN2g/"
+              target="blank_"
               aria-label="Facebook"
               className="transition-transform duration-200 hover:-translate-y-0.5 hover:opacity-80"
             >
@@ -53,7 +54,8 @@ export function TopBar() {
             </a>
 
             <a
-              href="#"
+              href="https://youtube.com/@hpe39?si=0W9bukIho146URpF"
+              target="blank_"
               aria-label="Twitter"
               className="transition-transform duration-200 hover:-translate-y-0.5 hover:opacity-80"
             >
@@ -62,6 +64,7 @@ export function TopBar() {
 
             <a
               href="#"
+              target="blank_"
               aria-label="YouTube"
               className="transition-transform duration-200 hover:-translate-y-0.5 hover:opacity-80"
             >
@@ -70,6 +73,7 @@ export function TopBar() {
 
             <a
               href="#"
+              target="blank_"
               aria-label="LinkedIn"
               className="transition-transform duration-200 hover:-translate-y-0.5 hover:opacity-80"
             >
@@ -78,6 +82,7 @@ export function TopBar() {
 
             <a
               href="#"
+              target="blank_"
               aria-label="Pinterest"
               className="transition-transform duration-200 hover:-translate-y-0.5 hover:opacity-80"
             >

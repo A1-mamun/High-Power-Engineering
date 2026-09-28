@@ -56,19 +56,19 @@ export function TopBar() {
             <a
               href="https://youtube.com/@hpe39?si=0W9bukIho146URpF"
               target="blank_"
-              aria-label="Twitter"
+              aria-label="YouTube"
               className="transition-transform duration-200 hover:-translate-y-0.5 hover:opacity-80"
             >
-              <Twitter className="h-5 md:h-6 w-5 md:w-6 fill-current" />
+              <Youtube className="h-5 md:h-6 w-5 md:w-6 fill-current" />
             </a>
 
             <a
               href="#"
               target="blank_"
-              aria-label="YouTube"
+              aria-label="Twitter"
               className="transition-transform duration-200 hover:-translate-y-0.5 hover:opacity-80"
             >
-              <Youtube className="h-5 md:h-6 w-5 md:w-6 fill-current" />
+              <Twitter className="h-5 md:h-6 w-5 md:w-6 fill-current" />
             </a>
 
             <a

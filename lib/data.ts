@@ -27,7 +27,7 @@ export const company = {
   description:
     "Leading provider of power generation, electrical infrastructure, and industrial solutions across South Asia. We deliver reliable, efficient, and sustainable energy systems for businesses of every size.",
   email: "contact@highpowerbd.com",
-  phone: "+8801842 11 39 39",
+  phone: "01842 11 39 39",
   address:
     "Rokeya Nibash (Ground Floor), 91 Shohid Jan-E-Alam Shorok, Muradpur",
   shortAddress: "Muradpur, Chattogram, Bangladesh",
@@ -100,6 +100,20 @@ export type Product = {
 
 export const products: Product[] = [
   {
+    title: "Substation Equipment",
+    description:
+      "Complete substation solutions including CT, PT, isolators, and busbars.",
+    icon: Building2,
+    href: "/products#substation",
+  },
+  {
+    title: "Lift",
+    description:
+      "High-capacity lifts and elevators for industrial and commercial buildings.",
+    icon: Building2,
+    href: "/products#lift",
+  },
+  {
     title: "Diesel Generators",
     description:
       "Heavy-duty diesel generators from 10 kVA to 3000 kVA for industrial and commercial use.",
@@ -107,18 +121,11 @@ export const products: Product[] = [
     href: "/products#diesel",
   },
   {
-    title: "Gas Generators",
+    title: "Solar Systems",
     description:
-      "Clean-burning gas generators engineered for efficiency and low emissions.",
+      "Turnkey solar power solutions including panels, inverters, and storage systems.",
     icon: Zap,
-    href: "/products#gas",
-  },
-  {
-    title: "Power Transformers",
-    description:
-      "Distribution and power transformers built to international standards.",
-    icon: Power,
-    href: "/products#transformers",
+    href: "/products#solar",
   },
   {
     title: "Panel Boards",
@@ -128,32 +135,18 @@ export const products: Product[] = [
     href: "/products#panels",
   },
   {
-    title: "Substation Equipment",
-    description:
-      "Complete substation solutions including CT, PT, isolators, and busbars.",
-    icon: Building2,
-    href: "/products#substation",
-  },
-  {
-    title: "Power Plants",
-    description:
-      "Turnkey power plant design, supply, and commissioning up to 500 MW.",
-    icon: Factory,
-    href: "/products#plants",
-  },
-  {
-    title: "Synchronizing Panels",
-    description:
-      "Auto-sync panels for paralleling multiple generators seamlessly.",
-    icon: Settings2,
-    href: "/products#sync",
-  },
-  {
     title: "Electrical Equipment",
     description:
       "Cables, switchgear, breakers, and full electrical accessory lines.",
     icon: Plug,
     href: "/products#equipment",
+  },
+  {
+    title: "Cable Trays",
+    description:
+      "Robust cable management solutions for industrial and commercial installations.",
+    icon: Power,
+    href: "/products#cable-trays",
   },
 ];
 

@@ -36,7 +36,7 @@ export function TopBar() {
         {/* Welcome text */}
         <div className="ml-[10%] md:ml-[20%] lg:ml-[35%]">
           <p className="text-sm tracking-tight text-white md:text-base lg:text-lg">
-            Welcome to High Power Engineering Limited
+            Welcome to High Power Engineering
           </p>
         </div>
 
@@ -62,23 +62,23 @@ export function TopBar() {
               <Youtube className="h-5 md:h-6 w-5 md:w-6 fill-current" />
             </a>
 
-            <a
+            {/* <a
               href="#"
               target="blank_"
               aria-label="Twitter"
               className="transition-transform duration-200 hover:-translate-y-0.5 hover:opacity-80"
             >
               <Twitter className="h-5 md:h-6 w-5 md:w-6 fill-current" />
-            </a>
+            </a> */}
 
-            <a
+            {/* <a
               href="#"
               target="blank_"
               aria-label="LinkedIn"
               className="transition-transform duration-200 hover:-translate-y-0.5 hover:opacity-80"
             >
               <Linkedin className="h-5 md:h-6 w-5 md:w-6 fill-current" />
-            </a>
+            </a> */}
 
             <a
               href="#"

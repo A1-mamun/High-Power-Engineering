@@ -32,6 +32,8 @@ export {
   FiChevronRight as ChevronRight,
   FiArrowRight as ArrowRight,
   FiArrowLeft as ArrowLeft,
+  FiArrowUp as ArrowUp,
+  FiArrowDown as ArrowDown,
   FiSend as Send,
   FiPlay as Play,
   FiSearch as Search,

@@ -194,22 +194,24 @@ export const heroSlides: Slide[] = [
     gradient: "from-secondary via-primary/80 to-secondary",
     image: "/images/hpe-0.jpg",
   },
-  // {
-  //   title: "Built for Reliability",
-  //   subtitle: "Engineered electrical systems that never stop running.",
-  //   icon: Power,
-  //   gradient: "from-secondary via-primary/90 to-slate-900",
-  //   image: "/images/hpe-1.jpg",
-  // },
   {
-    title: "Switchgear & Panels",
-    subtitle: "Custom control panels built to your specifications.",
-    icon: PanelsTopLeft,
-    gradient: "from-primary via-secondary to-slate-900",
-    image: "/images/hpe-2.jpg",
+    title: "Transformer",
+    subtitle:
+      "Reliable power transformers for industrial and commercial applications.",
+    icon: Power,
+    gradient: "from-secondary via-primary/90 to-slate-900",
+    image: "/images/hpe-transformer.jpg",
   },
   {
-    title: "Escalators",
+    title: "Substation",
+    subtitle:
+      "Complete substation solutions for industrial and commercial power distribution.",
+    icon: PanelsTopLeft,
+    gradient: "from-primary via-secondary to-slate-900",
+    image: "/images/hpe-substation.jpg",
+  },
+  {
+    title: "Escalator",
     subtitle:
       "Reliable escalators for high-traffic commercial and industrial spaces.",
     icon: Building2,
@@ -256,7 +258,7 @@ export const recentProjects = [
   {
     title: "RMG Factory Distribution Upgrade",
     category: "Switchgear",
-    image: "/images/hpe-4.jpg",
+    image: "/images/hpe-generator.jpg",
   },
 ];
 

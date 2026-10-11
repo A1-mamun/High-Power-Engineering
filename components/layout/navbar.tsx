@@ -35,16 +35,14 @@ import type { IconType as LucideIcon } from "@/components/icons";
 
 // Map nav-item children to icons for richer dropdown cards
 const childIconMap: Record<string, LucideIcon> = {
-  "Diesel Generators": Cog,
-  "Gas Generators": Zap,
-  "Power Transformers": Power,
-  "Panel Boards": PanelsTopLeft,
   "Substation Equipment": Building2,
-  "Power Plants": Factory,
-  "Synchronizing Panels": Settings2,
+  Elevator: Building2,
+  Escalator: Building2,
+  "Diesel Generators": Cog,
+  "Solar Systems": Wind,
+  "Panel Board": PanelsTopLeft,
   "Electrical Equipment": Plug,
-  "Air Conditioner": Wind,
-  "Interior Design": Sofa,
+  "Cable Trays": Power,
 };
 
 const Navbar = () => {

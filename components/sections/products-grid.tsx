@@ -4,6 +4,7 @@ import { ArrowRight } from "@/components/icons";
 import { products } from "@/lib/data";
 import { Button } from "@/components/ui/button";
 import SectionTitle from "../shared/SectionTitle";
+import Image from "next/image";
 
 export function ProductsGrid() {
   return (
@@ -17,7 +18,7 @@ export function ProductsGrid() {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4">
               {products.map((product) => {
-                const Icon = product.icon;
+                // const Icon = product.icon;
                 return (
                   <Link
                     key={product.title}
@@ -28,9 +29,12 @@ export function ProductsGrid() {
                       <div className="absolute inset-0 opacity-20">
                         <div className="absolute -right-6 -top-6 h-32 w-32 rounded-full bg-primary blur-2xl" />
                       </div>
-                      <Icon
-                        className="relative z-10 h-16 w-16 text-white transition-transform group-hover:scale-110"
-                        strokeWidth={1.5}
+                      <Image
+                        src={product.image}
+                        alt={product.title}
+                        width={200}
+                        height={200}
+                        className="relative z-10 h-full w-full object-cover"
                       />
                     </div>
                     <div className="flex flex-1 flex-col gap-2 p-4">

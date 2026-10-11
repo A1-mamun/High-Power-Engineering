@@ -60,14 +60,14 @@ export const navItems: NavItem[] = [
     label: "Products",
     href: "/products",
     children: [
-      { label: "Diesel Generators", href: "/products#diesel" },
-      { label: "Gas Generators", href: "/products#gas" },
-      { label: "Power Transformers", href: "/products#transformers" },
-      { label: "Panel Boards", href: "/products#panels" },
       { label: "Substation Equipment", href: "/products#substation" },
-      { label: "Power Plants", href: "/products#plants" },
-      { label: "Synchronizing Panels", href: "/products#sync" },
+      { label: "Elevator", href: "/products#elevators" },
+      { label: "Escalator", href: "/products#escalators" },
+      { label: "Diesel Generators", href: "/products#diesel" },
+      { label: "Solar Systems", href: "/products#solar" },
+      { label: "Panel Board", href: "/products#panels" },
       { label: "Electrical Equipment", href: "/products#equipment" },
+      { label: "Cable Trays", href: "/products#cable-trays" },
     ],
   },
   { label: "Services", href: "/services" },
@@ -96,6 +96,7 @@ export type Product = {
   description: string;
   icon: LucideIcon;
   href: string;
+  image: string;
 };
 
 export const products: Product[] = [
@@ -105,6 +106,7 @@ export const products: Product[] = [
       "Complete substation solutions including CT, PT, isolators, and busbars.",
     icon: Building2,
     href: "/products#substation",
+    image: "/images/hpe-substation.jpg",
   },
   {
     title: "Lift",
@@ -112,6 +114,15 @@ export const products: Product[] = [
       "High-capacity lifts and elevators for industrial and commercial buildings.",
     icon: Building2,
     href: "/products#lift",
+    image: "/images/hpe-elevator.jpg",
+  },
+  {
+    title: "Escalator",
+    description:
+      "Reliable escalators for high-traffic commercial and industrial spaces.",
+    icon: Building2,
+    href: "/products#escalator",
+    image: "/images/hpe-escalator.jpg",
   },
   {
     title: "Diesel Generators",
@@ -119,6 +130,7 @@ export const products: Product[] = [
       "Heavy-duty diesel generators from 10 kVA to 3000 kVA for industrial and commercial use.",
     icon: Cog,
     href: "/products#diesel",
+    image: "/images/hpe-generator.jpg",
   },
   {
     title: "Solar Systems",
@@ -126,6 +138,7 @@ export const products: Product[] = [
       "Turnkey solar power solutions including panels, inverters, and storage systems.",
     icon: Zap,
     href: "/products#solar",
+    image: "/images/hpe-solar.jpg",
   },
   {
     title: "Panel Boards",
@@ -133,6 +146,7 @@ export const products: Product[] = [
       "LV/MV switchgear and custom control panels for every application.",
     icon: PanelsTopLeft,
     href: "/products#panels",
+    image: "/images/hpe-panel-board.jpg",
   },
   {
     title: "Electrical Equipment",
@@ -140,6 +154,7 @@ export const products: Product[] = [
       "Cables, switchgear, breakers, and full electrical accessory lines.",
     icon: Plug,
     href: "/products#equipment",
+    image: "/images/hpe-electrical.png",
   },
   {
     title: "Cable Trays",
@@ -147,6 +162,7 @@ export const products: Product[] = [
       "Robust cable management solutions for industrial and commercial installations.",
     icon: Power,
     href: "/products#cable-trays",
+    image: "/images/hpe-cable-tray.png",
   },
 ];
 
@@ -192,15 +208,15 @@ export const heroSlides: Slide[] = [
       "High-performance lifts and elevators for industrial and commercial buildings.",
     icon: Factory,
     gradient: "from-secondary via-primary/80 to-secondary",
-    image: "/images/hpe-0.jpg",
+    image: "/images/hpe-substation.jpg",
   },
   {
-    title: "Transformer",
+    title: "Escalator",
     subtitle:
-      "Reliable power transformers for industrial and commercial applications.",
-    icon: Power,
-    gradient: "from-secondary via-primary/90 to-slate-900",
-    image: "/images/hpe-transformer.jpg",
+      "Reliable escalators for high-traffic commercial and industrial spaces.",
+    icon: Building2,
+    gradient: "from-secondary via-primary/70 to-slate-900",
+    image: "/images/hpe-escalator.jpg",
   },
   {
     title: "Substation",
@@ -211,12 +227,12 @@ export const heroSlides: Slide[] = [
     image: "/images/hpe-substation.jpg",
   },
   {
-    title: "Escalator",
+    title: "Transformer",
     subtitle:
-      "Reliable escalators for high-traffic commercial and industrial spaces.",
-    icon: Building2,
-    gradient: "from-secondary via-primary/70 to-slate-900",
-    image: "/images/hpe-3.jpg",
+      "Reliable power transformers for industrial and commercial applications.",
+    icon: Power,
+    gradient: "from-secondary via-primary/90 to-slate-900",
+    image: "/images/hpe-transformer.jpg",
   },
   {
     title: "Diesel Generator",
@@ -226,11 +242,19 @@ export const heroSlides: Slide[] = [
     image: "/images/hpe-generator.jpg",
   },
   {
+    title: "Open Type Generator.",
+    subtitle:
+      "Reliable power generation for industrial and commercial applications.",
+    icon: Wind,
+    gradient: "from-primary/90 via-secondary to-slate-900",
+    image: "/images/hpe-open-generator.jpg",
+  },
+  {
     title: "Renewable Energy",
     subtitle: "Sustainable power solutions for a greener future.",
     icon: Sofa,
     gradient: "from-secondary via-primary to-slate-900",
-    image: "/images/hpe-5.jpg",
+    image: "/images/hpe-solar.jpg",
   },
 ];
 
@@ -238,22 +262,22 @@ export const recentProjects = [
   {
     title: "335 MW Combined Cycle Power Plant",
     category: "Power Plant",
-    image: "/images/hpe-0.jpg",
+    image: "/images/hpe-elevator.jpg",
   },
   {
     title: "Industrial Substation — Gazipur",
     category: "Substation",
-    image: "/images/hpe-1.jpg",
+    image: "/images/hpe-substation.jpg",
   },
   {
     title: "Generator Bank — Chittagong Port",
     category: "Generators",
-    image: "/images/hpe-2.jpg",
+    image: "/images/hpe-escalator.jpg",
   },
   {
     title: "Hospital Backup Power — Square Hospital",
     category: "Backup",
-    image: "/images/hpe-3.jpg",
+    image: "/images/hpe-solar.jpg",
   },
   {
     title: "RMG Factory Distribution Upgrade",

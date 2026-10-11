@@ -34,7 +34,7 @@ export function RecentProject() {
           {/* Featured video */}
           <div className="lg:col-span-2">
             <FeaturedProjectVideo
-              videoId="VREiOSKyLnA"
+              videoId="vR8E-zOQt4Q"
               category={featured.category}
               title={featured.title}
             />

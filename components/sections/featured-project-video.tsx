@@ -27,12 +27,34 @@ export function FeaturedProjectVideo({
 
   // Build the YouTube embed URL with autoplay so it starts immediately when opened.
   const embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`;
+  // YouTube auto-generated thumbnails for the preview background.
+  const autoThumbnail = `https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`;
+  const autoThumbnailFallback = `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`;
+  const previewSrc = thumbnail ?? autoThumbnail;
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <div className="group relative overflow-hidden rounded-lg border bg-slate-900 shadow-md">
         <div className="relative flex aspect-video items-center justify-center bg-gradient-to-br from-secondary via-primary to-slate-900">
-          <div className="absolute inset-0 opacity-20">
+          {/* YouTube thumbnail behind the gradient overlay */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={previewSrc}
+            alt={title}
+            className="absolute inset-0 h-full w-full object-cover opacity-90 transition-transform duration-700 group-hover:scale-105"
+            onError={(e) => {
+              const img = e.currentTarget as HTMLImageElement;
+              if (img.src !== autoThumbnailFallback) {
+                img.src = autoThumbnailFallback;
+              }
+            }}
+          />
+
+          {/* Gradient + glow overlays so the white play button + text always read well */}
+          <div className="absolute inset-0 bg-gradient-to-br from-secondary/70 via-primary/40 to-slate-900/80 mix-blend-multiply" />
+          <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/85 via-black/40 to-transparent" />
+
+          <div className="absolute inset-0 opacity-100">
             <div className="absolute right-1/4 top-1/3 h-64 w-64 rounded-full bg-primary blur-3xl" />
           </div>
 

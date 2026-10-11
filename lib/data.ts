@@ -260,9 +260,9 @@ export const heroSlides: Slide[] = [
 
 export const recentProjects = [
   {
-    title: "335 MW Combined Cycle Power Plant",
-    category: "Power Plant",
-    image: "/images/hpe-elevator.jpg",
+    title: "315 KVA, 11 KV Distribution Transformer Repair",
+    category: "Transformer",
+    image: "/images/hpe-transformer.jpg",
   },
   {
     title: "Industrial Substation — Gazipur",

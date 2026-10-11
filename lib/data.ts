@@ -187,19 +187,20 @@ export type Slide = {
 
 export const heroSlides: Slide[] = [
   {
-    title: "Powering Industry",
-    subtitle: "Heavy-duty generators and turnkey power plants.",
+    title: "Elevetor",
+    subtitle:
+      "High-performance lifts and elevators for industrial and commercial buildings.",
     icon: Factory,
     gradient: "from-secondary via-primary/80 to-secondary",
     image: "/images/hpe-0.jpg",
   },
-  {
-    title: "Built for Reliability",
-    subtitle: "Engineered electrical systems that never stop running.",
-    icon: Power,
-    gradient: "from-secondary via-primary/90 to-slate-900",
-    image: "/images/hpe-1.jpg",
-  },
+  // {
+  //   title: "Built for Reliability",
+  //   subtitle: "Engineered electrical systems that never stop running.",
+  //   icon: Power,
+  //   gradient: "from-secondary via-primary/90 to-slate-900",
+  //   image: "/images/hpe-1.jpg",
+  // },
   {
     title: "Switchgear & Panels",
     subtitle: "Custom control panels built to your specifications.",
@@ -208,22 +209,23 @@ export const heroSlides: Slide[] = [
     image: "/images/hpe-2.jpg",
   },
   {
-    title: "Substations",
-    subtitle: "Complete substation design, supply, and installation.",
+    title: "Escalators",
+    subtitle:
+      "Reliable escalators for high-traffic commercial and industrial spaces.",
     icon: Building2,
     gradient: "from-secondary via-primary/70 to-slate-900",
     image: "/images/hpe-3.jpg",
   },
   {
-    title: "Climate Control",
-    subtitle: "Industrial air conditioning for any environment.",
+    title: "Diesel Generator",
+    subtitle: "Reliable power generation for critical applications.",
     icon: Wind,
     gradient: "from-primary/90 via-secondary to-slate-900",
-    image: "/images/hpe-4.jpg",
+    image: "/images/hpe-generator.jpg",
   },
   {
-    title: "Interior Solutions",
-    subtitle: "Professional interior design for industrial spaces.",
+    title: "Renewable Energy",
+    subtitle: "Sustainable power solutions for a greener future.",
     icon: Sofa,
     gradient: "from-secondary via-primary to-slate-900",
     image: "/images/hpe-5.jpg",

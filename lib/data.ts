@@ -208,7 +208,7 @@ export const heroSlides: Slide[] = [
       "High-performance lifts and elevators for industrial and commercial buildings.",
     icon: Factory,
     gradient: "from-secondary via-primary/80 to-secondary",
-    image: "/images/hpe-substation.jpg",
+    image: "/images/hpe-elevator.jpg",
   },
   {
     title: "Escalator",

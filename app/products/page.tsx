@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { ArrowRight } from "@/components/icons";
 
 import { products } from "@/lib/data";
-import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -32,30 +31,27 @@ export default function ProductsPage() {
           {products.map((product) => {
             const Icon = product.icon;
             return (
-              <div
+              <Link
                 key={product.title}
+                href={product.href}
                 className="group flex flex-col overflow-hidden rounded-lg border bg-white shadow-sm transition-all hover:border-primary hover:shadow-lg"
               >
                 <div className="relative flex h-48 items-center justify-center bg-gradient-to-br from-secondary via-primary to-slate-900">
                   <Icon className="h-20 w-20 text-white" strokeWidth={1.5} />
                 </div>
                 <div className="flex flex-1 flex-col gap-3 p-6">
-                  <h3 className="text-xl font-bold text-foreground">
+                  <h3 className="text-xl font-bold text-foreground transition-colors group-hover:text-primary">
                     {product.title}
                   </h3>
                   <p className="text-sm leading-relaxed text-muted-foreground">
                     {product.description}
                   </p>
-                  <div className="mt-auto pt-2">
-                    <Button asChild variant="outline" className="w-full">
-                      <Link href="/contact">
-                        Request Information
-                        <ArrowRight className="h-4 w-4" />
-                      </Link>
-                    </Button>
+                  <div className="mt-auto flex items-center gap-1 pt-2 text-xs font-semibold text-primary transition-colors group-hover:text-secondary">
+                    View details
+                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </div>
                 </div>
-              </div>
+              </Link>
             );
           })}
         </div>

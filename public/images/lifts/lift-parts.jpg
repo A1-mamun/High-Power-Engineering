@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#028FD9"/>
+      <stop offset="100%" stop-color="#011E80"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#g)"/>
+  <circle cx="140" cy="150" r="40" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="3"/>
+  <circle cx="140" cy="150" r="20" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="3"/>
+  <line x1="140" y1="110" x2="140" y2="190" stroke="rgba(255,255,255,0.5)" stroke-width="2"/>
+  <line x1="100" y1="150" x2="180" y2="150" stroke="rgba(255,255,255,0.5)" stroke-width="2"/>
+  <rect x="220" y="100" width="100" height="100" rx="6" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="3"/>
+  <circle cx="270" cy="150" r="15" fill="rgba(255,255,255,0.3)"/>
+  <text x="200" y="285" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">PARTS &amp; ACCESSORIES</text>
+</svg>

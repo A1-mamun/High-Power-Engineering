@@ -60,14 +60,14 @@ export const navItems: NavItem[] = [
     label: "Products",
     href: "/products",
     children: [
-      { label: "Substation Equipment", href: "/products#substation" },
-      { label: "Elevator", href: "/products#elevators" },
-      { label: "Escalator", href: "/products#escalators" },
-      { label: "Diesel Generators", href: "/products#diesel" },
-      { label: "Solar Systems", href: "/products#solar" },
-      { label: "Panel Board", href: "/products#panels" },
-      { label: "Electrical Equipment", href: "/products#equipment" },
-      { label: "Cable Trays", href: "/products#cable-trays" },
+      { label: "Substation Equipment", href: "/products/substation-equipment" },
+      { label: "Elevator", href: "/products/lift" },
+      { label: "Escalator", href: "/products/escalator" },
+      { label: "Diesel Generators", href: "/products/diesel-generators" },
+      { label: "Solar Systems", href: "/products/solar-systems" },
+      { label: "Panel Board", href: "/products/panel-boards" },
+      { label: "Electrical Equipment", href: "/products/electrical-equipment" },
+      { label: "Cable Trays", href: "/products/cable-trays" },
     ],
   },
   { label: "Services", href: "/services" },
@@ -91,77 +91,220 @@ export const serviceTiles: ServiceTile[] = [
   { title: "Interior Design", icon: Sofa, href: "/services#interior" },
 ];
 
+export type LiftType = {
+  label: string;
+  description: string;
+  image: string;
+};
+
+export type AccessoryGalleryImage = {
+  title: string;
+  caption: string;
+  image: string;
+};
+
 export type Product = {
   title: string;
+  slug: string;
   description: string;
+  longDescription?: string;
   icon: LucideIcon;
   href: string;
   image: string;
+  liftTypes?: LiftType[];
+  accessoryGallery?: {
+    eyebrow: string;
+    title: string;
+    description: string;
+    images: AccessoryGalleryImage[];
+  };
 };
 
 export const products: Product[] = [
   {
     title: "Substation Equipment",
+    slug: "substation-equipment",
     description:
       "Complete substation solutions including CT, PT, isolators, and busbars.",
     icon: Building2,
-    href: "/products#substation",
+    href: "/products/substation-equipment",
     image: "/images/hpe-substation.jpg",
   },
   {
     title: "Lift",
+    slug: "lift",
     description:
       "High-capacity lifts and elevators for industrial and commercial buildings.",
+    longDescription:
+      "We supply, install, and maintain a complete range of lifts and elevator systems tailored to residential, commercial, healthcare, and industrial applications. From passenger and home lifts to hospital beds, freight, capsule, and panoramic elevators — our portfolio covers every vertical-transport need, backed by reliable spare parts and service support.",
     icon: Building2,
-    href: "/products#lift",
+    href: "/products/lift",
     image: "/images/hpe-elevator.jpg",
+    liftTypes: [
+      {
+        label: "Passenger Lifts",
+        description:
+          "Smooth and energy-efficient passenger elevators designed for residential and commercial buildings of every height.",
+        image: "/images/lifts/lift-passenger.jpg",
+      },
+      {
+        label: "Home Lifts",
+        description:
+          "Compact home lifts that blend seamlessly into modern residences, with quiet operation and elegant finishes.",
+        image: "/images/lifts/lift-home.jpg",
+      },
+      {
+        label: "Cargo / Freight Lifts",
+        description:
+          "Heavy-duty freight elevators for warehouses, factories, and loading bays with high load capacity and rugged construction.",
+        image: "/images/lifts/lift-cargo.jpg",
+      },
+      {
+        label: "Hospital Lifts",
+        description:
+          "Stretcher-grade hospital elevators with extra-wide cabins, smooth ride quality, and reliable backup power support.",
+        image: "/images/lifts/lift-hospital.jpg",
+      },
+      {
+        label: "Capsule / Panoramic",
+        description:
+          "Architectural capsule and panoramic lifts with glass cabins for hotels, malls, and signature commercial spaces.",
+        image: "/images/lifts/lift-capsule.jpg",
+      },
+      {
+        label: "Escalators & Travelators",
+        description:
+          "Indoor and outdoor escalators and moving walks for high-traffic public and commercial environments.",
+        image: "/images/lifts/lift-escalators.jpg",
+      },
+      {
+        label: "Dumbwaiters / Service",
+        description:
+          "Compact dumbwaiter and service lifts for kitchens, libraries, restaurants, and back-of-house operations.",
+        image: "/images/lifts/lift-dumbwaiters.jpg",
+      },
+      {
+        label: "Parts & Accessories",
+        description:
+          "Genuine spare parts, drives, doors, cabins, and accessories to keep every lift running safely and reliably.",
+        image: "/images/lifts/lift-parts.jpg",
+      },
+    ],
+    accessoryGallery: {
+      eyebrow: "Parts & Accessories",
+      title: "Lift Accessories & Finishes Gallery",
+      description:
+        "Browse our range of cabin decorations, landing doors, ceilings, floors, handrails, and car operation panels — supplied and installed by our own engineering team.",
+      images: [
+        {
+          title: "Cabin Decoration — Standard Stainless Steel",
+          caption:
+            "Hairline stainless steel and acrylic cabin finishes with PVC flooring — clean, durable, and ideal for offices and apartment buildings.",
+          image: "/images/lifts/accessories/fuji-accessory-12.jpg",
+        },
+        {
+          title: "Cabin Decoration — Mirror Etched Steel",
+          caption:
+            "Mirror and etched stainless steel cabin walls paired with brushed steel handrails and PVC floors, in FJ-005 and FJ-006 configurations.",
+          image: "/images/lifts/accessories/fuji-accessory-13.jpg",
+        },
+        {
+          title: "Cabin Decoration — Brushed Steel & Mirror",
+          caption:
+            "Painted steel and LED-lit cabins in brushed stainless steel and mirror polished finishes — models FJ-007 through FJ-010.",
+          image: "/images/lifts/accessories/fuji-accessory-14.jpg",
+        },
+        {
+          title: "Cabin Decoration — Golden & Rose Gold",
+          caption:
+            "Premium rose gold mirror, champagne mirror, and wooden frame cabins with tianzan stainless steel handrails for luxury developments.",
+          image: "/images/lifts/accessories/fuji-accessory-16.jpg",
+        },
+        {
+          title: "Landing Doors — Mirror & Etched",
+          caption:
+            "Decorative landing door panels in mirror etched and hairline stainless steel — models FJ-D001 through FJ-D004.",
+          image: "/images/lifts/accessories/fuji-accessory-18.jpg",
+        },
+        {
+          title: "Landing Doors — Golden & Rose Golden",
+          caption:
+            "Titanium golden, champagne golden, and rose golden etched landing doors in nine standard variants for hotels and commercial towers.",
+          image: "/images/lifts/accessories/fuji-accessory-19.jpg",
+        },
+        {
+          title: "Cabin Ceiling Designs",
+          caption:
+            "Eight ceiling styles in hairline stainless steel, mirror, and acrylic with integrated LED lighting — models FJ-D001 through FJ-D008.",
+          image: "/images/lifts/accessories/fuji-accessory-20.jpg",
+        },
+        {
+          title: "Floors, Handrails & RAL Colours",
+          caption:
+            "Decorative cabin floors, ten handrail profiles, and a full RAL colour palette so every cabin can be matched to your building interior.",
+          image: "/images/lifts/accessories/fuji-accessory-21.jpg",
+        },
+        {
+          title: "Car Operation Panels & Fixtures",
+          caption:
+            "Digital COP and LOP indicator panels, braille buttons, fireman switches, and hall lanterns — models FJ-COP and FJ-LOP series.",
+          image: "/images/lifts/accessories/fuji-accessory-23.jpg",
+        },
+      ],
+    },
   },
   {
     title: "Escalator",
+    slug: "escalator",
     description:
       "Reliable escalators for high-traffic commercial and industrial spaces.",
     icon: Building2,
-    href: "/products#escalator",
+    href: "/products/escalator",
     image: "/images/hpe-escalator.jpg",
   },
   {
     title: "Diesel Generators",
+    slug: "diesel-generators",
     description:
       "Heavy-duty diesel generators from 10 kVA to 3000 kVA for industrial and commercial use.",
     icon: Cog,
-    href: "/products#diesel",
+    href: "/products/diesel-generators",
     image: "/images/hpe-generator.jpg",
   },
   {
     title: "Solar Systems",
+    slug: "solar-systems",
     description:
       "Turnkey solar power solutions including panels, inverters, and storage systems.",
     icon: Zap,
-    href: "/products#solar",
+    href: "/products/solar-systems",
     image: "/images/hpe-solar.jpg",
   },
   {
     title: "Panel Boards",
+    slug: "panel-boards",
     description:
       "LV/MV switchgear and custom control panels for every application.",
     icon: PanelsTopLeft,
-    href: "/products#panels",
+    href: "/products/panel-boards",
     image: "/images/hpe-panel-board.jpg",
   },
   {
     title: "Electrical Equipment",
+    slug: "electrical-equipment",
     description:
       "Cables, switchgear, breakers, and full electrical accessory lines.",
     icon: Plug,
-    href: "/products#equipment",
+    href: "/products/electrical-equipment",
     image: "/images/hpe-electrical.png",
   },
   {
     title: "Cable Trays",
+    slug: "cable-trays",
     description:
       "Robust cable management solutions for industrial and commercial installations.",
     icon: Power,
-    href: "/products#cable-trays",
+    href: "/products/cable-trays",
     image: "/images/hpe-cable-tray.png",
   },
 ];

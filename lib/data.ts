@@ -29,8 +29,8 @@ export const company = {
   email: "contact@highpowerbd.com",
   phone: "01842 11 39 39",
   address:
-    "Rokeya Nibash (Ground Floor), 91 Shohid Jan-E-Alam Shorok, Muradpur",
-  shortAddress: "Muradpur, Chattogram, Bangladesh",
+    "Rokeya Nibash (Ground Floor), 91 Shohid Jan-E-Alam Shorok, Muradpur, Chattogram",
+  shortAddress: "Muradpur, Chattogram",
   founded: 2010,
 };
 

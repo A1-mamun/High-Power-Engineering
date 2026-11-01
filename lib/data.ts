@@ -22,7 +22,7 @@ import {
 } from "@/components/icons";
 
 export const company = {
-  name: "High Power Engineering Limited",
+  name: "High Power Engineering",
   tagline: "Your Pinnacle in Electrical and Power Solutions!",
   description:
     "Leading provider of power generation, electrical infrastructure, and industrial solutions across South Asia. We deliver reliable, efficient, and sustainable energy systems for businesses of every size.",

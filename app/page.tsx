@@ -9,9 +9,10 @@ import { ClientLogos } from "@/components/sections/client-logos";
 import { CtaBanner } from "@/components/sections/cta-banner";
 
 export const metadata: Metadata = {
-  title: "Industrial Power Solutions & Electrical Infrastructure",
+  title:
+    "High Power Engineering - Your Pinnacle in Electrical and Power Solutions",
   description:
-    "Powering South Asia's industries with reliable generators, transformers, substations, panel boards, and turnkey power plants. Trusted by leading enterprises across Bangladesh.",
+    "High Power Engineering provides cutting-edge electrical and power solutions for industries across Chittagong and beyond. Our products include reliable generators, transformers, substations, panel boards, and turnkey power plants. Trusted by leading enterprises across Bangladesh.",
   alternates: {
     canonical: "/",
   },
